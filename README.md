@@ -4,13 +4,8 @@ Le socle du projet est nommé SIGSWAGPuissance4 et réalisé par un groupe d'INS
 
 
 ## Jouer à Puissance 4  
-Pour lancer une partie, il faut exécuter le fichier `websimulate.pl`, puis écrire le prédicat `"initAction."`.
-Pour exécuter le fichier `websimulate.pl`:
-```
-$ swipl websimulate.pl
+Pour lancer une partie, il faut exécuter le fichier `puissance4.pl`, puis écrire le prédicat `"puissance4."`.
 
-?- initAction.
-```
 
 Il faudra penser à écrire un `"."` à chaque fin de prédicat/commande entré dans le terminal !
 

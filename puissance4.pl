@@ -23,10 +23,10 @@
 %%%%%%%%%%%
 %%  Actions
 
-% initAction
+% puissance4
 % Initialise le jeu, son plateau et ses joueurs.
 % Répond une liste des joueurs disponibles ainsi que leur code correspondant
-initAction :-
+puissance4 :-
     initJeu,
     retractall(joueurCourant(_,_,_)),
     retractall(autreJoueur(_,_,_)),
@@ -105,7 +105,7 @@ obtenirCoup(CouleurJCourant,25,ListEval,Colonne) :-
 % avec comme dernier coup joué : un jeton en Colonne Ligne par CouleurJCourant
 % Status s'unifie à "win" si le coup a amené à une victoire.
 statutJeu(Colonne,Ligne,CouleurJCourant) :-
-    gagne(Colonne,Ligne,CouleurJCourant), write('Joueur '), write(CouleurJCourant), write(' a gagné!').
+    gagne(Colonne,Ligne,CouleurJCourant), write('Joueur '), write(CouleurJCourant), write(' a gagne!').
 % Status s'unifie à "draw" si la partie se termine sur une égalité,
 statutJeu(_,_,_) :-
     not(coupPossible), write('draw').
