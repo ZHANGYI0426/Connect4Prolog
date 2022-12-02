@@ -122,7 +122,7 @@ saisirCoup(Coup) :-
 	read(Coup).
 
 afficherTypeJoueur(I,J) :-
-	typeJoueur(I,J),
+	jouerType(I,J),
 	write('\t'), write(I), write('. '), write(J), nl.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

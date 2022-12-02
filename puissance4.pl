@@ -57,7 +57,7 @@ puissance4 :-
 %   "win" si le coup a amené à une victoire.
 tourAction :-
     joueurCourant(CouleurJCourant,TypeJoueur,ListEval),
-	typeJoueur(TypeJoueur,Type),
+	jouerType(TypeJoueur,Type),
 	write('C\'est au joueur '), write(CouleurJCourant), write(' ('), write(Type), write(') de jouer.'),  nl,
 	obtenirCoup(CouleurJCourant,TypeJoueur,ListEval,Colonne),
     placerJeton(Colonne,Ligne,CouleurJCourant),
