@@ -57,7 +57,7 @@ puissance4 :-
 %   "win" si le coup a amené à une victoire.
 tourAction :-
     joueurCourant(CouleurJCourant,TypeJoueur,ListEval),
-	jouerType(TypeJoueur,Type),
+	typeJoueur(TypeJoueur,Type),
 	write('C\'est au joueur '), write(CouleurJCourant), write(' ('), write(Type), write(') de jouer.'),  nl,
 	obtenirCoup(CouleurJCourant,TypeJoueur,ListEval,Colonne),
     placerJeton(Colonne,Ligne,CouleurJCourant),
@@ -105,7 +105,7 @@ obtenirCoup(CouleurJCourant,25,ListEval,Colonne) :-
 % avec comme dernier coup joué : un jeton en Colonne Ligne par CouleurJCourant
 % Status s'unifie à "win" si le coup a amené à une victoire.
 statutJeu(Colonne,Ligne,CouleurJCourant) :-
-    gagne(Colonne,Ligne,CouleurJCourant), write('Joueur '), write(CouleurJCourant), write(' a gagne!').
+    gagne(Colonne,Ligne,CouleurJCourant), write('Joueur '), write(CouleurJCourant), write(' a gagné!').
 % Status s'unifie à "draw" si la partie se termine sur une égalité,
 statutJeu(_,_,_) :-
     not(coupPossible), write('draw').

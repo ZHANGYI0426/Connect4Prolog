@@ -7,14 +7,14 @@
 	coupPossible/0,
 	case/3,
 	coupValide/1,
-	jouerType/2,
+	typeJoueur/2,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Modification du code source %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	jouerTypePreconf/4,
+	typeJoueurPreconf/4,
 	changerJoueur/0,
 	insererJeton/3,
-	heuristiquesType/2
+	typeHeuristique/2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Fin de modification du code source %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,68 +42,68 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Gestion des heuristiques %%%
 % Définitiion des heuristiques.
-% heuristiquesType/2(+Code,-Nom)
-heuristiquesType(0, 'victoireAnticipee').
-heuristiquesType(1, 'evalConf').
-heuristiquesType(2, 'evalPosition').
-heuristiquesType(3, 'evalPuissances3').
-heuristiquesType(4, 'densite').
-heuristiquesType(5, 'evalAdjacence').
-heuristiquesType(6, 'evalTest').
-heuristiquesType(7, 'pertubations').
+% typeHeuristique/2(+Code,-Nom)
+typeHeuristique(0, 'victoireAnticipee').
+typeHeuristique(1, 'evalConf').
+typeHeuristique(2, 'evalPosition').
+typeHeuristique(3, 'evalPuissances3').
+typeHeuristique(4, 'densite').
+typeHeuristique(5, 'evalAdjacence').
+typeHeuristique(6, 'evalTest').
+typeHeuristique(7, 'pertubations').
 
 %%% Gestion des joueurs %%%
 
 % Définition des différentes IA pour le jeu
-% jouerType/2(+CodeIA,-NomIA)
-jouerType(1,'Humain').
-jouerType(2,'IA Aléatoire').
-jouerType(11,'IA Minimax 1 - Algo HeptarchieCorp').
-jouerType(12,'IA Minimax 2 - Algo HeptarchieCorp').
-jouerType(13,'IA Minimax 3 - Algo HeptarchieCorp').
-jouerType(14,'IA Minimax 4 - Algo HeptarchieCorp').
-jouerType(15,'IA Minimax 5 - Algo HeptarchieCorp').
-jouerType(21,'IA Minimax 1 α/β - Algo HeptarchieCorp').
-jouerType(22,'IA Minimax 2 α/β - Algo HeptarchieCorp').
-jouerType(23,'IA Minimax 3 α/β - Algo HeptarchieCorp').
-jouerType(24,'IA Minimax 4 α/β - Algo HeptarchieCorp').
-jouerType(25,'IA Minimax 5 α/β - Algo HeptarchieCorp').
+% typeJoueur/2(+CodeIA,-NomIA)
+typeJoueur(1,'Humain').
+typeJoueur(2,'IA Aléatoire').
+typeJoueur(11,'IA Minimax 1 - Algo HeptarchieCorp').
+typeJoueur(12,'IA Minimax 2 - Algo HeptarchieCorp').
+typeJoueur(13,'IA Minimax 3 - Algo HeptarchieCorp').
+typeJoueur(14,'IA Minimax 4 - Algo HeptarchieCorp').
+typeJoueur(15,'IA Minimax 5 - Algo HeptarchieCorp').
+typeJoueur(21,'IA Minimax 1 α/β - Algo HeptarchieCorp').
+typeJoueur(22,'IA Minimax 2 α/β - Algo HeptarchieCorp').
+typeJoueur(23,'IA Minimax 3 α/β - Algo HeptarchieCorp').
+typeJoueur(24,'IA Minimax 4 α/β - Algo HeptarchieCorp').
+typeJoueur(25,'IA Minimax 5 α/β - Algo HeptarchieCorp').
 
 % Définition d'IA préconfigurées pour les tests
-% jouerTypePreconf/4(+CodePreconf,-NomIA,-CodeIA,-ListEval)
-jouerTypePreconf(2,'IA Aléatoire',2,[]).
-jouerTypePreconf(3,'IA Minimax 3 α/β - victoireAnticipee + eval Position',23,[0,2]).
-jouerTypePreconf(4,'IA Minimax 3 α/β - victoireAnticipee + eval Position+Puissance3',23,[0,2,3]).
-jouerTypePreconf(5,'IA Minimax 4 α/β - victoireAnticipee + eval Position',24,[0,2]).
-jouerTypePreconf(6,'IA Minimax 4 α/β - victoireAnticipee + eval Position+Puissance3',24,[0,2,3]).
-jouerTypePreconf(7,'IA Minimax 5 α/β - victoireAnticipee + eval Position',25,[0,2]).
-jouerTypePreconf(8,'IA Minimax 5 α/β - victoireAnticipee + eval Position+Puissance3',25,[0,2,3]).
-jouerTypePreconf(9,'IA Minimax 3 α/β - eval test',23,[6]).
-jouerTypePreconf(10,'IA Minimax 4 α/β - eval test',24,[6]).
-jouerTypePreconf(11,'IA Minimax 5 α/β - eval test',25,[6]).
-jouerTypePreconf(12,'IA Minimax 1 α/β - eval Configuration',21,[1]).
-jouerTypePreconf(13,'IA Minimax 2 α/β - eval Configuration',22,[1]).
-jouerTypePreconf(14,'IA Minimax 3 α/β - eval Configuration',23,[1]).
-jouerTypePreconf(15,'IA Minimax 4 α/β - eval Configuration',24,[1]).
-jouerTypePreconf(16,'IA Minimax 5 α/β - eval Configuration',25,[1]).
-jouerTypePreconf(17,'IA Minimax 1 - eval Configuration',11,[1]).
-jouerTypePreconf(18,'IA Minimax 2 - eval Configuration',12,[1]).
-jouerTypePreconf(19,'IA Minimax 3 - eval Configuration',13,[1]).
+% typeJoueurPreconf/4(+CodePreconf,-NomIA,-CodeIA,-ListEval)
+typeJoueurPreconf(2,'IA Aléatoire',2,[]).
+typeJoueurPreconf(3,'IA Minimax 3 α/β - victoireAnticipee + eval Position',23,[0,2]).
+typeJoueurPreconf(4,'IA Minimax 3 α/β - victoireAnticipee + eval Position+Puissance3',23,[0,2,3]).
+typeJoueurPreconf(5,'IA Minimax 4 α/β - victoireAnticipee + eval Position',24,[0,2]).
+typeJoueurPreconf(6,'IA Minimax 4 α/β - victoireAnticipee + eval Position+Puissance3',24,[0,2,3]).
+typeJoueurPreconf(7,'IA Minimax 5 α/β - victoireAnticipee + eval Position',25,[0,2]).
+typeJoueurPreconf(8,'IA Minimax 5 α/β - victoireAnticipee + eval Position+Puissance3',25,[0,2,3]).
+typeJoueurPreconf(9,'IA Minimax 3 α/β - eval test',23,[6]).
+typeJoueurPreconf(10,'IA Minimax 4 α/β - eval test',24,[6]).
+typeJoueurPreconf(11,'IA Minimax 5 α/β - eval test',25,[6]).
+typeJoueurPreconf(12,'IA Minimax 1 α/β - eval Configuration',21,[1]).
+typeJoueurPreconf(13,'IA Minimax 2 α/β - eval Configuration',22,[1]).
+typeJoueurPreconf(14,'IA Minimax 3 α/β - eval Configuration',23,[1]).
+typeJoueurPreconf(15,'IA Minimax 4 α/β - eval Configuration',24,[1]).
+typeJoueurPreconf(16,'IA Minimax 5 α/β - eval Configuration',25,[1]).
+typeJoueurPreconf(17,'IA Minimax 1 - eval Configuration',11,[1]).
+typeJoueurPreconf(18,'IA Minimax 2 - eval Configuration',12,[1]).
+typeJoueurPreconf(19,'IA Minimax 3 - eval Configuration',13,[1]).
 
 changerJoueur :-
-	joueurCourant(rouge,jouerType1, jouerTypeEval1),
-	autreJoueur(jaune,jouerType2, jouerTypeEval2),
+	joueurCourant(rouge,TypeJoueurR, TypeEvalJoueurR),
+	autreJoueur(jaune,TypeJoueurJ, TypeEvalJoueurJ),
 	retractall(joueurCourant(_,_,_)),
 	retractall(autreJoueur(_,_,_)),
-	assert(joueurCourant(jaune,jouerType2, jouerTypeEval2)),
-	assert(autreJoueur(rouge,jouerType1, jouerTypeEval1)),!.
+	assert(joueurCourant(jaune,TypeJoueurJ, TypeEvalJoueurJ)),
+	assert(autreJoueur(rouge,TypeJoueurR, TypeEvalJoueurR)),!.
 changerJoueur :-
-	joueurCourant(jaune,jouerType2, jouerTypeEval2),
-	autreJoueur(rouge,jouerType1, jouerTypeEval1),
+	joueurCourant(jaune,TypeJoueurJ, TypeEvalJoueurJ),
+	autreJoueur(rouge,TypeJoueurR, TypeEvalJoueurR),
 	retractall(joueurCourant(_,_,_)),
 	retractall(autreJoueur(_,_,_)),
-	assert(joueurCourant(rouge,jouerType1, jouerTypeEval1)),
-	assert(autreJoueur(jaune,jouerType2, jouerTypeEval2)),!.
+	assert(joueurCourant(rouge,TypeJoueurR, TypeEvalJoueurR)),
+	assert(autreJoueur(jaune,TypeJoueurJ, TypeEvalJoueurJ)),!.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Fin de modification du code source %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
